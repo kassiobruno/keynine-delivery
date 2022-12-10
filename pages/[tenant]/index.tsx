@@ -1,7 +1,13 @@
+import { Banner } from "../../components/Banner";
 import { SearchInput } from "../../components/SearchInput";
 import styles from "../../styles/Home.module.css";
 
 const Home = () => {
+
+  const handleSearch = (searchValue: string) => {
+    console.log(`Você está buscando por: ${searchValue}`)
+  }
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -25,9 +31,14 @@ const Home = () => {
           
         </div>
           <div className={styles.headerBottom}>
-            ...          
+            <SearchInput 
+            mainColor="#FB9400"
+            onSearch={handleSearch} 
+            />                      
           </div>
-          <SearchInput />
+          
+          <Banner />
+
       </header>
     </div>
   );
